@@ -84,6 +84,8 @@ Make sure you have Python 3.x installed on your system. You can download it from
 
     (Make sure `pdf_tool_app.py` is the name of your main file).
 
+    ![pdf tool ui inteface](/pdf_tool.png)
+
 2.  **Navigate the interface:**
     The main application window will be divided into three main sections:
 
