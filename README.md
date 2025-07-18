@@ -32,13 +32,13 @@ Make sure you have Python 3.x installed on your system. You can download it from
 
 1.  **Clone or download the repository:**
     If you use Git:
-
+  
     ```bash
-    git clone <REPOSITORY_URL> # Replace with your repository URL if you have one
-    cd <your_folder_name> # For example, cd pdf-tool
+    git clone https://github.com/godie/pdf_tools.git
+    cd pdf_tools # For example, cd pdf-tool
     ```
 
-    Or simply download the `pdf_tool_app.py` file and place it in a folder of your choice.
+    Or simply download the [pdf_tool.py](/pdf_tool.py) file and place it in a folder of your choice.
 
 2.  **Create a virtual environment (recommended):**
     It's good practice to create a virtual environment to manage your project's dependencies.

@@ -30,11 +30,11 @@ Asegúrate de tener Python 3.x instalado en tu sistema. Puedes descargarlo desde
     Si usas Git:
 
     ```bash
-    git clone <URL_DEL_REPOSITORIO> # Reemplaza con la URL de tu repositorio si lo tienes
-    cd <nombre_de_tu_carpeta> # Por ejemplo, cd herramienta-pdf
+    git clone https://github.com/godie/pdf_tools.git
+    cd pdf_tools # Por ejemplo, cd herramienta-pdf
     ```
 
-    O simplemente descarga el archivo `pdf_tool_app.py` y colócalo en una carpeta de tu elección.
+    O simplemente descarga el archivo [pdf_tool.py](/pdf_tool.py) y colócalo en una carpeta de tu elección.
 
 2.  **Crea un entorno virtual (recomendado):**
     Es una buena práctica crear un entorno virtual para gestionar las dependencias de tu proyecto.
