@@ -1,0 +1,45 @@
+# .github/workflows/release_windows_exe.yml
+
+name: Release PDF Tool Executable # Camiado: Nombre del workflow
+
+on:
+  push:
+    tags: # Este workflow se dispara cuando se hace push a un tag (ej: v1.0.0)
+      - 'v*' # Coincide con tags que empiezan con 'v' (ej: v1.0, v1.0.1, v2.0.0)
+  workflow_dispatch: # Permite ejecutar el workflow manualmente
+
+permissions:
+  contents: write # ¡Importante! Necesita permisos de escritura para crear el release y los tags.
+
+jobs:
+  build-and-release:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.10"
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Build Windows Executable
+      run: |
+        pyinstaller --noconfirm --onefile --windowed --name PDFTool pdf_tool.py
+
+    - name: Create Release
+      uses: softprops/action-gh-release@v1
+      if: startsWith(github.ref, 'refs/tags/')
+      with:
+        files: |
+          dist/PDFTool.exe
+        name: Release ${{ github.ref_name }}
+        tag_name: ${{ github.ref }}
+        body: |
+          🎉 New Release: ${{ github.ref_name }} 🎉
